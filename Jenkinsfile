@@ -20,6 +20,14 @@ pipeline {
                 sh 'mvn compile'
             }
         }
+        stage('Sonar Analysis'){
+            steps {
+                echo ('Sonar Scanner')
+                withSonarQubeEnv('sonar65'){
+                sh 'mvn clean package sonar:sonar'
+                }
+            }
+        }
         stage('Test'){
             steps {
                 sh 'mvn test'
