@@ -23,7 +23,7 @@ pipeline {
         stage('Sonar Analysis'){
             steps {
                 echo ('Sonar Scanner')
-                withSonarQubeEnv('Sonar65'){
+                withSonarQubeEnv('sonar65'){
                 sh 'mvn clean package sonar:sonar'
                 }
             }
