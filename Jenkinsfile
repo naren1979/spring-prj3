@@ -8,7 +8,7 @@ pipeline
     stages{
         stage("Checkout SCM"){
             steps{
-                checkout scm
+                git branch: 'dev', url: 'https://github.com/naren1979/spring-prj3.git'
                 echo "========executing A========"
             }
      
