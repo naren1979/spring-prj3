@@ -1,11 +1,10 @@
-pipeline 
-    agent any {
-                tools {
-            jdk: 'jdk8'
-            maven:'m3'
-        }
+pipeline {
+    agent any
+    tools {
+        maven:'m3'
     }
-    stages{
+}
+        stages{
         stage("Checkout SCM"){
             steps{
                 git branch: 'master', url: 'https://github.com/naren1979/spring-prj3.git'
